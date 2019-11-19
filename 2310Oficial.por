@@ -3,30 +3,37 @@ programa
 	
 	funcao inicio()
 	{
-		real tentativa[3]
-		real acertos[3]
-		real valor
-		inteiro contA, contB, i=0
-		inteiro num 
-		cadeia jogador
+		real tentativa[3], acertos[3], numeroDeJogadas
+		inteiro contadorA, contadorB
+		inteiro numeroJogadores
+		cadeia nomeJogador
 
-          leia(num)
-		para(contA=0; contA<num; contA++)
+          leia(numeroJogadores)
+		para(contadorA=0; contadorA < numeroJogadores; contadorA++)
 		{
-			leia(jogador)
-			para(contB=0;contB<3;contB++)
+			leia(nomeJogador)
+			
+			para(contadorB=0; contadorB<3; contadorB++)
 			{
-				leia(valor)
-				tentativa[contB] = tentativa[contB] + valor
+				leia(numeroDeJogadas)
+				tentativa[contadorB] = tentativa[contadorB] + numeroDeJogadas
 			}
-			para(contB=0;contB<3;contB++)
+			
+			para(contadorB=0; contadorB < 3; contadorB++)
 			{
-				leia(valor)
-				acertos[contB] += valor
+				leia(numeroDeJogadas)
+				acertos[contadorB] = acertos[contadorB] + numeroDeJogadas
 			}		
 		}
-		
-		
+
+		escreva("Pontos de Saque: ")
+		escreva((acertos[0] / tentativa[0]) * 100)
+
+		escreva(" Pontos de Bloqueio: ")
+		escreva((acertos[1] / tentativa[1]) * 100)
+
+		escreva(" Pontos de Ataque: ")
+		escreva((acertos[2] / tentativa[2]) * 100)
 		
 
 	}
@@ -36,7 +43,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 424; 
+ * @POSICAO-CURSOR = 817; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
